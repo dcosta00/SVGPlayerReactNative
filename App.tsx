@@ -1,23 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import ConfigScreen from "./screens/ConfigScreen";
+import PlayerScreen from "./screens/PlayerScreen";
+import { RootStackTypes } from "./navigation/RootStackTypes";
 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+const RootStack = createStackNavigator<RootStackTypes>();
 
-export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
+function App() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <RootStack.Navigator initialRouteName="Config">
+          <RootStack.Screen name="Config" component={ConfigScreen} />
+          <RootStack.Screen name="Player" component={PlayerScreen} />
+        </RootStack.Navigator>
+      </NavigationContainer>
+      <StatusBar />
+    </SafeAreaProvider>
+  );
 }
+
+export default App;
