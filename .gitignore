@@ -3,6 +3,7 @@ node_modules/**/*
 ..expo-shared/*
 .vscode/*
 yarn.lock
+yarn.*
 npm-debug.*
 *.jks
 *.p8
