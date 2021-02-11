@@ -13,4 +13,4 @@ Player screen
 
 <img src='/assets/examples/player_card_closed.png' height=450 width=200>
 <img src='/assets/examples/player_card_open.png'  height=450 width=200>
-<img src='/assets/examples/player_card_open2.png' height=450 width=200>
+<img src='/assets/examples/player_card_opern2.png.png' height=450 width=200>
