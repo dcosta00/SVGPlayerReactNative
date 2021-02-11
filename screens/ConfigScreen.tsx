@@ -7,11 +7,12 @@ import { DataLoader } from "../components/DataLoader";
 
 export default function ConfigScreen() {
   const [url, setUrl] = useState("");
+  const [intervalMs, setIntervalMs] = useState(1);
 
   return (
     <View style={styles.container}>
-      <ConfigForm setUrl={setUrl} />
-      <DataLoader url={url} navigate="Player" />
+      <ConfigForm setUrl={setUrl} setIntervalMs={setIntervalMs} />
+      <DataLoader url={url} navigate="Player" intervalMs={intervalMs} />
     </View>
   );
 }

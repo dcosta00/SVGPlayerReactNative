@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 interface dataLoader {
   url: string;
   navigate: string;
+  intervalMs: number;
 }
 export function DataLoader(params: dataLoader) {
   const navigation = useNavigation();
@@ -64,6 +65,7 @@ export function DataLoader(params: dataLoader) {
       onPress={() => {
         navigation.navigate(params.navigate, {
           data: data,
+          intervalMs: params.intervalMs,
         });
       }}
     />

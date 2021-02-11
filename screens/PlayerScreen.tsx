@@ -22,7 +22,7 @@ export default function PlayerScreen() {
       <Countdown
         initialTime={imagesName.length - 1}
         data={imagesName}
-        interval={2000}
+        interval={route.params.intervalMs}
         num={num}
         setNum={setNum}
       />

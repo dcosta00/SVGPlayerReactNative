@@ -26,6 +26,7 @@ export function ConfigForm(params: any) {
   const onSubmit = (data: any) => {
     console.log("Submit ", data);
     params.setUrl(data.url);
+    params.setIntervalMs(data.intervalMs);
   };
 
   React.useEffect(() => {

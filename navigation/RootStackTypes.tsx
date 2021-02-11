@@ -1,4 +1,4 @@
 export type RootStackTypes = {
   Config: undefined;
-  Player: { data: string };
+  Player: { data: string; intervalMs: number };
 };
